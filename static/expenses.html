@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <link href="CSS/expenses.css" rel="stylesheet">
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<link href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet">
+	<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="javascript/functions.js" type="text/javascript"></script>
+	<script src="javascript/expense.js" type="text/javascript"></script>
+    <script src="javascript/expensecontroller.js" type="text/javascript"></script>
+	<title>Expense Tracking</title>
+</head>
+<body>
+	<div style="text-align: center;">
+		<form class="form-inline" id="expense-form" name="expense-form">
+			<div class="form-group">
+				<label for="inputdate">Date:</label> <input class="form-control" id="inputdate" name="date"
+				required="" type="date" value="">
+			</div>
+			<div class="form-group">
+				<label for="inputstore">Store:</label> <input class="form-control" id="inputstore" name="store"
+				required="" type="text" value="">
+			</div>
+			<div class="form-group">
+				<label for="inputcategory">Category:</label> <input class="form-control" id="inputcategory"
+				name="category" required="" type="text" value="">
+			</div>
+			<div class="form-group">
+				<label for="inputitem">Item:</label> <input class="form-control" id="inputitem" name="item"
+				required="" type="text" value="">
+			</div><label class="sr-only" for="amount">Amount (in dollars)</label>
+			<div class="input-group">
+				<div class="input-group-addon">
+					$
+				</div><input class="form-control" id="amount" required="" step="0.01" type="number" value="">
+			</div><br>
+			<button class="btn btn-primary" id="submit" type="submit">Submit</button>
+		</form>
+		<div id="actions">
+            <label for="check-all" style="margin-bottom: 0px;">Check All</label><input id="check-all" type="checkbox">
+			<button class="btn btn-primary" id="deleterows" type="button">Delete Checked Rows</button>
+            <select id="sort" name="sort" title="Warning: case sensitive sorting">
+				<option disabled selected>
+					Sort by (case sensitive)
+				</option>
+				<option>
+					Date
+				</option>
+				<option>
+					Store
+				</option>
+				<option>
+					Category
+				</option>
+				<option>
+					Item
+				</option>
+				<option>
+					Amount
+				</option>
+			</select> 
+            <label for="reverse-sort" style="margin-bottom: 0px;">Reverse sort</label> <input id="reverse-sort" type="checkbox">
+            
+		</div>
+	</div>
+	<table class="table table-hover" id="expensetable">
+		<thead>
+			<tr>
+				<th style="text-align: center; padding-left: 0px">Date</th>
+				<th style="text-align: center; padding-left: 50px">Store</th>
+				<th style="text-align: center; padding-left: 50px; padding-right: 50px">Category</th>
+				<th style="text-align: center">Item</th>
+				<th style="text-align: center; padding-left: 50px; padding-right: 0px">Amount</th>
+				
+			</tr>
+		</thead>
+		<tbody id="main"></tbody>
+	</table>
+    <table class="table table-hover">
+        <thead>
+            <tr id="total-row">
+                <th>Total expenses = </th>
+                <th style="text-align: right;" id="totalcell">0</th>
+            </tr>
+        </thead>
+    </table>
+	<div class="box1">
+		<a id="box-link"></a>
+	</div>
+</body>
+</html>

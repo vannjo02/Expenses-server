@@ -1,0 +1,54 @@
+#submit {
+    margin: 4px 0px 4px 0px;
+}
+#amountcell:before {
+    content: "$";
+}
+#totalcell:before {
+    content: "$";
+}
+body {
+    background-size: 100%;
+    background-image: url(../media/cat.jpg);
+    background-repeat: no-repeat;
+}
+thead {
+    background-color: lightgray;
+}
+table {
+    
+    width: 85%;
+}
+thead {
+    display: inline-block;
+    width: 85%;
+    margin-left: 7.5%
+}
+tbody {
+    background-color: rgba(240, 240, 240, .8);
+    height: 400px;
+    display: block;
+    width: 85%;
+    margin-left: 7.5%;
+    overflow: auto;
+}
+td {
+    width: 23%;
+}
+th{
+    width: 1%;
+}
+
+#actions {
+    margin-bottom: 4px;
+}
+#box-link {
+    cursor: pointer;
+    position: absolute;
+    top: 8%;
+    left: 73%;
+    width: 240px;
+    height: 65px;
+    background-color: transparent;
+}
+
